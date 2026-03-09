@@ -1,0 +1,1420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advisor Onboarding — Courtney Uhrig | Nexus Benefit Solutions</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --white: #FAFAF8;
+      --forest: #1F3D2E;
+      --forest-light: #2A5240;
+      --rust: #B8522A;
+      --rust-dark: #9A4422;
+      --rust-light: #D4693F;
+      --sage: #7A9282;
+      --pale-sage: #E8EBE4;
+      --charcoal: #2D2D2D;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--white);
+      color: var(--charcoal);
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    /* Header */
+    .header {
+      background: var(--forest);
+      color: white;
+      padding: 40px 0;
+    }
+    .header-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+    .header .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 4px;
+    }
+    .header .brand img {
+      height: 42px;
+      width: auto;
+      filter: brightness(0) invert(1);
+    }
+    .header .brand-text {
+      font-family: 'DM Serif Display', serif;
+      font-size: 24px;
+      letter-spacing: 0.5px;
+    }
+    .header .tagline {
+      font-size: 13px;
+      color: var(--sage);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 32px;
+    }
+    .header h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 36px;
+      font-weight: 400;
+      margin-bottom: 8px;
+    }
+    .header .subtitle {
+      font-size: 16px;
+      color: var(--pale-sage);
+      font-weight: 300;
+    }
+
+    /* Quick Links Bar */
+    .quick-links {
+      background: var(--forest-light);
+      padding: 12px 0;
+      border-bottom: 2px solid var(--rust);
+    }
+    .quick-links-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 32px;
+      display: flex;
+      gap: 24px;
+      align-items: center;
+    }
+    .quick-links .ql-label {
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--sage);
+      white-space: nowrap;
+    }
+    .quick-links a {
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      padding: 4px 12px;
+      border-radius: 4px;
+      transition: background 0.2s;
+      white-space: nowrap;
+    }
+    .quick-links a:hover {
+      background: rgba(255,255,255,0.1);
+    }
+    .quick-links a .arrow {
+      font-size: 11px;
+      margin-left: 4px;
+      color: var(--rust-light);
+    }
+
+    /* Container */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    /* Progress Bar */
+    .progress-section {
+      padding: 24px 0 0 0;
+    }
+    .progress-bar-wrap {
+      background: var(--pale-sage);
+      border-radius: 8px;
+      height: 12px;
+      overflow: hidden;
+      margin-top: 8px;
+    }
+    .progress-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--forest), var(--rust));
+      border-radius: 8px;
+      transition: width 0.5s ease;
+    }
+    .progress-stats {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 8px;
+      font-size: 13px;
+      color: var(--sage);
+    }
+    .progress-stats .pct {
+      font-weight: 600;
+      color: var(--forest);
+    }
+
+    /* Profile Card */
+    .profile-card {
+      background: white;
+      border: 1px solid var(--pale-sage);
+      border-radius: 8px;
+      padding: 32px;
+      margin: 24px 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .profile-card .field {
+      display: flex;
+      flex-direction: column;
+    }
+    .profile-card .field.full {
+      grid-column: 1 / -1;
+    }
+    .profile-card .label {
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--sage);
+      margin-bottom: 4px;
+    }
+    .profile-card .value {
+      font-size: 16px;
+      color: var(--forest);
+      font-weight: 500;
+    }
+
+    /* Sections */
+    .section {
+      padding: 40px 0;
+      border-bottom: 1px solid var(--pale-sage);
+    }
+    .section:last-child { border-bottom: none; }
+    .section h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 28px;
+      color: var(--forest);
+      margin-bottom: 8px;
+      font-weight: 400;
+    }
+    .section .section-desc {
+      color: var(--sage);
+      margin-bottom: 24px;
+      font-size: 15px;
+    }
+    .section h3 {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--forest);
+      margin: 24px 0 12px 0;
+    }
+    .section p { margin-bottom: 16px; }
+
+    /* Phase Blocks */
+    .phase {
+      background: white;
+      border: 1px solid var(--pale-sage);
+      border-radius: 8px;
+      padding: 24px 28px;
+      margin-bottom: 16px;
+      border-left: 4px solid var(--sage);
+    }
+    .phase.active { border-left-color: var(--rust); }
+    .phase .phase-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 4px;
+    }
+    .phase h3 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 20px;
+      color: var(--forest);
+      font-weight: 400;
+      margin: 0;
+    }
+    .phase .dates {
+      font-size: 13px;
+      color: var(--sage);
+      font-weight: 500;
+    }
+    .phase .goal {
+      font-size: 14px;
+      color: var(--rust);
+      font-weight: 500;
+      margin-bottom: 12px;
+    }
+    .phase .phase-progress {
+      font-size: 12px;
+      color: var(--sage);
+      margin-bottom: 16px;
+      font-weight: 500;
+    }
+    .phase .phase-progress span {
+      color: var(--forest);
+      font-weight: 600;
+    }
+    .phase ul {
+      list-style: none;
+      padding: 0;
+    }
+    .phase li {
+      padding: 8px 0 8px 36px;
+      position: relative;
+      font-size: 15px;
+      border-bottom: 1px solid #f2f2f0;
+      cursor: pointer;
+      user-select: none;
+      transition: background 0.15s;
+      border-radius: 4px;
+      margin: 0 -8px;
+      padding-left: 44px;
+      padding-right: 8px;
+    }
+    .phase li:hover {
+      background: rgba(232, 235, 228, 0.4);
+    }
+    .phase li:last-child { border-bottom: none; }
+    .phase li .checkbox {
+      position: absolute;
+      left: 12px;
+      top: 10px;
+      width: 18px;
+      height: 18px;
+      border: 2px solid var(--sage);
+      border-radius: 4px;
+      background: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+    }
+    .phase li .checkbox svg {
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+    .phase li.done .checkbox {
+      background: var(--forest);
+      border-color: var(--forest);
+    }
+    .phase li.done .checkbox svg {
+      opacity: 1;
+    }
+    .phase li.done .task-text {
+      color: var(--sage);
+      text-decoration: line-through;
+    }
+
+    /* Opportunities Section */
+    .opp-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 16px;
+      margin-top: 16px;
+    }
+    .opp-card {
+      background: white;
+      border: 1px solid var(--pale-sage);
+      border-radius: 8px;
+      padding: 24px;
+      border-top: 3px solid var(--rust);
+    }
+    .opp-card h4 {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--forest);
+      margin-bottom: 8px;
+    }
+    .opp-card p {
+      font-size: 14px;
+      color: var(--charcoal);
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    /* Pace Banner */
+    .pace-banner {
+      background: var(--pale-sage);
+      border-radius: 8px;
+      padding: 28px 32px;
+      margin: 24px 0;
+    }
+    .pace-banner h3 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 22px;
+      color: var(--forest);
+      font-weight: 400;
+      margin: 0 0 12px 0;
+    }
+    .pace-banner p {
+      font-size: 15px;
+      color: var(--charcoal);
+      margin-bottom: 8px;
+    }
+    .pace-banner p:last-child { margin-bottom: 0; }
+    .pace-banner strong { color: var(--forest); }
+
+    /* Checkin Table */
+    .checkin-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 16px;
+    }
+    .checkin-table th {
+      text-align: left;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--sage);
+      padding: 8px 12px;
+      border-bottom: 2px solid var(--pale-sage);
+    }
+    .checkin-table td {
+      padding: 12px;
+      border-bottom: 1px solid var(--pale-sage);
+      font-size: 15px;
+    }
+    .checkin-table tr:last-child td { border-bottom: none; }
+
+    /* Form */
+    .form-section {
+      background: var(--forest);
+      padding: 48px 0;
+      margin-top: 40px;
+    }
+    .form-section h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 28px;
+      color: white;
+      margin-bottom: 8px;
+      font-weight: 400;
+    }
+    .form-section .section-desc {
+      color: var(--sage);
+      margin-bottom: 32px;
+    }
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+    }
+    .form-group.full {
+      grid-column: 1 / -1;
+    }
+    .form-group label {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--sage);
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .form-group label .required {
+      color: var(--rust-light);
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px;
+      padding: 10px 14px;
+      border: 1px solid var(--forest-light);
+      border-radius: 6px;
+      background: rgba(255,255,255,0.07);
+      color: white;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: rgba(255,255,255,0.3);
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--rust);
+    }
+    .form-group select {
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%237A9282' fill='none' stroke-width='1.5'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 12px center;
+      padding-right: 32px;
+    }
+    .form-group select option {
+      background: var(--forest);
+      color: white;
+    }
+    .form-group textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+    .form-divider {
+      grid-column: 1 / -1;
+      border: none;
+      border-top: 1px solid var(--forest-light);
+      margin: 8px 0;
+    }
+    .form-section-label {
+      grid-column: 1 / -1;
+      font-family: 'DM Serif Display', serif;
+      font-size: 20px;
+      color: white;
+      font-weight: 400;
+      margin-top: 8px;
+    }
+    .submit-row {
+      grid-column: 1 / -1;
+      display: flex;
+      justify-content: flex-end;
+      gap: 12px;
+      margin-top: 8px;
+    }
+    .btn-submit {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      padding: 12px 32px;
+      background: var(--rust);
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.2s;
+      letter-spacing: 0.5px;
+    }
+    .btn-submit:hover {
+      background: var(--rust-dark);
+    }
+    .btn-save {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px;
+      font-weight: 500;
+      padding: 12px 24px;
+      background: transparent;
+      color: var(--sage);
+      border: 1px solid var(--forest-light);
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .btn-save:hover {
+      border-color: var(--sage);
+      color: white;
+    }
+
+    /* Upload */
+    .upload-area {
+      border: 2px dashed var(--forest-light);
+      border-radius: 8px;
+      padding: 24px;
+      text-align: center;
+      color: var(--sage);
+      font-size: 14px;
+      cursor: pointer;
+      transition: border-color 0.2s;
+    }
+    .upload-area:hover { border-color: var(--rust); }
+    .upload-area span { color: var(--rust-light); text-decoration: underline; }
+
+    /* Footer */
+    .footer {
+      background: var(--charcoal);
+      color: var(--sage);
+      text-align: center;
+      padding: 32px;
+      font-size: 13px;
+    }
+    .footer .footer-brand {
+      font-family: 'DM Serif Display', serif;
+      color: white;
+      font-size: 16px;
+      margin-bottom: 4px;
+    }
+
+    /* Tech Stack & Training */
+    .tools-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 16px;
+    }
+    .tool-card {
+      background: white;
+      border: 1px solid var(--pale-sage);
+      border-radius: 8px;
+      padding: 20px 24px;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+    .tool-card .tool-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      background: var(--pale-sage);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+    .tool-card .tool-info h4 {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--forest);
+      margin-bottom: 2px;
+    }
+    .tool-card .tool-info p {
+      font-size: 13px;
+      color: var(--sage);
+      margin: 0;
+      line-height: 1.4;
+    }
+    .tool-card .tool-info a {
+      color: var(--rust);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 500;
+    }
+    .tool-card .tool-info a:hover { text-decoration: underline; }
+
+    .training-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 16px;
+      margin-top: 16px;
+    }
+    .training-card {
+      background: white;
+      border: 1px solid var(--pale-sage);
+      border-radius: 8px;
+      padding: 24px;
+      position: relative;
+    }
+    .training-card .badge {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      padding: 3px 8px;
+      border-radius: 4px;
+      margin-bottom: 10px;
+    }
+    .training-card .badge.core { background: var(--forest); color: white; }
+    .training-card .badge.intermediate { background: var(--rust); color: white; }
+    .training-card .badge.advanced { background: var(--charcoal); color: white; }
+    .training-card h4 {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--forest);
+      margin-bottom: 6px;
+    }
+    .training-card p {
+      font-size: 13px;
+      color: var(--charcoal);
+      line-height: 1.4;
+      margin: 0;
+    }
+    .training-card .timing {
+      font-size: 12px;
+      color: var(--sage);
+      margin-top: 8px;
+      font-weight: 500;
+    }
+
+    /* Repeater fields */
+    .repeater { margin-top: 8px; }
+    .repeater-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 8px;
+      align-items: end;
+    }
+    .repeater-row input {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px;
+      padding: 10px 14px;
+      border: 1px solid var(--forest-light);
+      border-radius: 6px;
+      background: rgba(255,255,255,0.07);
+      color: white;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .repeater-row input::placeholder { color: rgba(255,255,255,0.3); }
+    .repeater-row input:focus { border-color: var(--rust); }
+    .btn-add {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      padding: 6px 14px;
+      background: transparent;
+      color: var(--rust-light);
+      border: 1px dashed var(--forest-light);
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.2s;
+      margin-top: 4px;
+    }
+    .btn-add:hover { border-color: var(--rust); color: white; }
+
+    /* Toast notification */
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: var(--forest);
+      color: white;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 500;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      transform: translateY(80px);
+      opacity: 0;
+      transition: all 0.3s ease;
+      z-index: 100;
+    }
+    .toast.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .profile-card { grid-template-columns: 1fr; }
+      .opp-grid { grid-template-columns: 1fr; }
+      .form-grid { grid-template-columns: 1fr; }
+      .form-group.full { grid-column: 1; }
+      .header h1 { font-size: 28px; }
+      .quick-links-inner { flex-wrap: wrap; gap: 8px 16px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-inner">
+      <div class="brand">
+        <img src="nexus_logo.png" alt="Nexus Benefit Solutions">
+        <span class="brand-text">Nexus Benefit Solutions</span>
+      </div>
+      <div class="tagline">Advisory Without Compromise</div>
+      <h1>Advisor Onboarding Plan</h1>
+      <div class="subtitle">Courtney Uhrig — 90-Day Development Guide</div>
+    </div>
+  </div>
+
+  <!-- Quick Links -->
+  <div class="quick-links">
+    <div class="quick-links-inner">
+      <span class="ql-label">Quick Links</span>
+      <a href="https://nexusbenefitsolutions.com" target="_blank">Nexus Website <span class="arrow">&#8599;</span></a>
+      <a href="https://app.rocketship.it" target="_blank">Agent Portal (CRM) <span class="arrow">&#8599;</span></a>
+      <a href="https://outlook.office.com" target="_blank">Email / M365 <span class="arrow">&#8599;</span></a>
+      <a href="https://partnerslink.com" target="_blank">Partners Link <span class="arrow">&#8599;</span></a>
+      <a href="https://claude.ai" target="_blank">Claude Team <span class="arrow">&#8599;</span></a>
+    </div>
+  </div>
+
+  <!-- Progress -->
+  <div class="container">
+    <div class="progress-section">
+      <div style="display:flex; justify-content:space-between; align-items:baseline;">
+        <span style="font-size:14px; font-weight:600; color:var(--forest);">Overall Progress</span>
+        <span class="progress-stats"><span class="pct" id="progress-pct">0%</span></span>
+      </div>
+      <div class="progress-bar-wrap">
+        <div class="progress-bar-fill" id="progress-bar" style="width: 0%"></div>
+      </div>
+      <div class="progress-stats">
+        <span id="progress-count">0 of 0 tasks complete</span>
+        <span>Day <span id="day-count">7</span> of 90</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Profile Card -->
+  <div class="container">
+    <div class="profile-card">
+      <div class="field">
+        <div class="label">Advisor</div>
+        <div class="value">Courtney Uhrig</div>
+      </div>
+      <div class="field">
+        <div class="label">Start Date</div>
+        <div class="value">March 3, 2026</div>
+      </div>
+      <div class="field">
+        <div class="label">Location</div>
+        <div class="value">Davison, MI</div>
+      </div>
+      <div class="field">
+        <div class="label">Primary Focus</div>
+        <div class="value">Amaze Health &rarr; Core Small Group</div>
+      </div>
+      <div class="field">
+        <div class="label">Mentors</div>
+        <div class="value">Jason Bearup, Brenda Manning, Wendi Uhrig</div>
+      </div>
+      <div class="field">
+        <div class="label">Check-ins</div>
+        <div class="value">Monday Afternoons</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Your Pace -->
+  <div class="container">
+    <div class="pace-banner">
+      <h3>Your Pace, Your Plan</h3>
+      <p>This plan is built around <strong>your goals, your financial needs, and your timeline.</strong></p>
+      <p><strong>Need income fast?</strong> We can compress this — prospecting and revenue within 60 days. Amaze intros, rev-share deals, and ops work so money flows while your pipeline builds.</p>
+      <p><strong>Want to go deeper?</strong> If you have the runway, take more time to learn the business from the inside. More shadowing, more training. You'll be stronger for it.</p>
+      <p>We'll figure out the right rhythm together at our Monday check-ins.</p>
+    </div>
+  </div>
+
+  <!-- Ways to Earn -->
+  <div class="container">
+    <div class="section">
+      <h2>Ways to Earn &amp; Contribute</h2>
+      <p class="section-desc">Building your book is the core path — but it's not the only way to learn and earn from day one.</p>
+
+      <div class="opp-grid">
+        <div class="opp-card">
+          <h4>Your Own Book</h4>
+          <p>Start with your Top 25 list and Amaze Health introductions. Build confidence, build relationships, build revenue.</p>
+        </div>
+        <div class="opp-card">
+          <h4>Open Doors &rarr; Rev Share</h4>
+          <p>Know someone who runs a business? Open the door. Jason or Brenda will partner with you to work the deal. You earn a share.</p>
+        </div>
+        <div class="opp-card">
+          <h4>Operations &amp; Projects</h4>
+          <p>CRM work, carrier research, document collection, marketing support. Real work, real learning, income while your pipeline builds.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 90-Day Plan -->
+  <div class="container">
+    <div class="section">
+      <h2>The 90-Day Plan</h2>
+      <p class="section-desc">Three phases. Click any item to mark it complete. We'll adjust the pace based on your goals.</p>
+
+      <div class="phase active" data-phase="1">
+        <div class="phase-header">
+          <h3>Phase 1: Foundation</h3>
+          <span class="dates">Mar 3 – Apr 3</span>
+        </div>
+        <div class="goal">Get set up, learn the basics, make your first introductions</div>
+        <div class="phase-progress">Phase progress: <span class="phase-pct">0%</span></div>
+        <ul>
+          <li class="done" data-task="m365"><span class="checkbox"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="task-text">M365 account — email, Teams, OneDrive</span></li>
+          <li class="done" data-task="email-sig"><span class="checkbox"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="task-text">Email signature set up</span></li>
+          <li class="done" data-task="partners-link"><span class="checkbox"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="task-text">Partners Link courtesy account</span></li>
+          <li class="done" data-task="crm-profile"><span class="checkbox"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="task-text">CRM profile created</span></li>
+          <li class="done" data-task="welcome-meeting"><span class="checkbox"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="task-text">Welcome meeting with Jason</span></li>
+          <li data-task="paperwork"><span class="checkbox"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="task-text">Complete all paperwork (W-9, IC Agreement, Commission Agreement, BAA, NDA)</span></li>
+          <li data-task="biz-cards"><span class="checkbox"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="task-text">Business cards ordered</span></li>
+          <li data-task="photos-bio"><span class="checkbox"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="task-text">Headshot, family photo, and bio for website</span></li>
+          <li data-task="website"><span class="checkbox"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="task-text">Added to nexusbenefitsolutions.com team page</span></li>
+          <li data-task="enneagram"><span class="checkbox"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="task-text">Enneagram assessment</span></li>
+          <li data-task="claude-team"><span class="checkbox"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="task-text">Claude Team / AI tools access and walkthrough</span></li>
+          <li data-task="crm-training"><span class="checkbox"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="task-text">CRM training with Brenda</span></li>
+          <li data-task="sgb-101"><span class="checkbox"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="task-text">Small Group Benefits 101</span></li>
+          <li data-task="amaze-deep"><span class="checkbox"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="task-text">Amaze Health / Encompassing Health deep dive</span></li>
+          <li data-task="carrier-landscape"><span class="checkbox"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="task-text">Michigan carrier landscape overview</span></li>
+          <li data-task="shadow-wendi"><span class="checkbox"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="task-text">Shadow Wendi on 2–3 interactions</span></li>
+          <li data-task="top25"><span class="checkbox"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="task-text">Review and prioritize Top 25 list</span></li>
+          <li data-task="first5"><span class="checkbox"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="task-text">First 5 Amaze introductions</span></li>
+        </ul>
+      </div>
+
+      <div class="phase" data-phase="2">
+        <div class="phase-header">
+          <h3>Phase 2: Building</h3>
+          <span class="dates">Apr 3 – May 3</span>
+        </div>
+        <div class="goal">Active prospecting, first enrollments, growing independence</div>
+        <div class="phase-progress">Phase progress: <span class="phase-pct">0%</span></div>
+        <ul>
+          <li data-task="10-intros"><span class="checkbox"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="task-text">10+ Amaze Health introductions</span></li>
+          <li data-task="first-enrollment"><span class="checkbox"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="task-text">First Amaze enrollment(s)</span></li>
+          <li data-task="pipeline-crm"><span class="checkbox"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="task-text">Pipeline tracked in CRM</span></li>
+          <li data-task="ai-proposals"><span class="checkbox"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="task-text">Using AI tools for proposals and presentations</span></li>
+          <li data-task="quoting-comfort"><span class="checkbox"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="task-text">Comfortable quoting Priority Health and BCBSM</span></li>
+          <li data-task="shadow-renewal"><span class="checkbox"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="task-text">Shadow a small group renewal</span></li>
+          <li data-task="carrier-appts"><span class="checkbox"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="task-text">Carrier appointments submitted</span></li>
+          <li data-task="core-prospect-list"><span class="checkbox"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="task-text">Building core small group prospect list</span></li>
+          <li data-task="midpoint"><span class="checkbox"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="task-text">Mid-point check-in with Jason</span></li>
+        </ul>
+      </div>
+
+      <div class="phase" data-phase="3">
+        <div class="phase-header">
+          <h3>Phase 3: Independence</h3>
+          <span class="dates">May 3 – Jun 3</span>
+        </div>
+        <div class="goal">Running your pipeline, first revenue, looking ahead</div>
+        <div class="phase-progress">Phase progress: <span class="phase-pct">0%</span></div>
+        <ul>
+          <li data-task="manage-pipeline"><span class="checkbox"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="task-text">Managing Amaze pipeline independently</span></li>
+          <li data-task="first-core-quote"><span class="checkbox"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="task-text">First core small group quote delivered</span></li>
+          <li data-task="first-commission"><span class="checkbox"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="task-text">First commission-generating case</span></li>
+          <li data-task="full-cycle"><span class="checkbox"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="task-text">Full sales cycle confidence</span></li>
+          <li data-task="daily-tools"><span class="checkbox"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="task-text">CRM and AI tools in daily workflow</span></li>
+          <li data-task="revenue-targets"><span class="checkbox"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="task-text">Revenue targets set for months 4–6</span></li>
+          <li data-task="90-review"><span class="checkbox"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="task-text">Formal 90-day review with Jason</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Check-in Schedule -->
+  <div class="container">
+    <div class="section">
+      <h2>Check-In Schedule</h2>
+      <p class="section-desc">You're not doing this alone. Here's who's got your back and when.</p>
+
+      <table class="checkin-table">
+        <thead>
+          <tr>
+            <th>Cadence</th>
+            <th>With</th>
+            <th>Focus</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Weekly</strong> — Monday PM</td>
+            <td>Jason</td>
+            <td>Progress, priorities, strategy, blockers</td>
+          </tr>
+          <tr>
+            <td><strong>As needed</strong></td>
+            <td>Brenda</td>
+            <td>Training, quoting help, ops questions</td>
+          </tr>
+          <tr>
+            <td><strong>As needed</strong></td>
+            <td>Wendi</td>
+            <td>Account management, market intel, shadowing</td>
+          </tr>
+          <tr>
+            <td><strong>Day 45</strong></td>
+            <td>Jason</td>
+            <td>Mid-point — on track? Adjustments?</td>
+          </tr>
+          <tr>
+            <td><strong>Day 90</strong></td>
+            <td>Jason</td>
+            <td>Formal review — performance, goals, career path</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Tech Stack -->
+  <div class="container">
+    <div class="section">
+      <h2>Your Tech Stack</h2>
+      <p class="section-desc">These are the tools you'll use day-to-day. You don't need to master them all at once — we'll walk you through each one.</p>
+
+      <div class="tools-grid">
+        <div class="tool-card">
+          <div class="tool-icon">&#9993;</div>
+          <div class="tool-info">
+            <h4>Microsoft 365</h4>
+            <p>Email, Teams chat/video, OneDrive file storage, SharePoint, Calendar</p>
+            <a href="https://outlook.office.com" target="_blank">Open M365 &#8599;</a>
+          </div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-icon">&#128202;</div>
+          <div class="tool-info">
+            <h4>Rocketship CRM</h4>
+            <p>Your hub — contacts, deals, pipeline, activity logging, commissions</p>
+            <a href="https://app.rocketship.it" target="_blank">Open CRM &#8599;</a>
+          </div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-icon">&#128176;</div>
+          <div class="tool-info">
+            <h4>Partners Link</h4>
+            <p>Carrier quoting platform — run quotes, compare plans, build proposals</p>
+            <a href="https://partnerslink.com" target="_blank">Open Partners Link &#8599;</a>
+          </div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-icon">&#129302;</div>
+          <div class="tool-info">
+            <h4>Claude Team (AI)</h4>
+            <p>AI-powered presentations, research, proposals, prospect analysis</p>
+            <a href="https://claude.ai" target="_blank">Open Claude &#8599;</a>
+          </div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-icon">&#127974;</div>
+          <div class="tool-info">
+            <h4>Carrier Portals</h4>
+            <p>Direct access to Priority Health, BCBSM, UHC, and more as you get appointed</p>
+          </div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-icon">&#128279;</div>
+          <div class="tool-info">
+            <h4>Nexus Website</h4>
+            <p>Your public profile, team page, and the face of the firm to prospects</p>
+            <a href="https://nexusbenefitsolutions.com" target="_blank">Visit Site &#8599;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Training & Development -->
+  <div class="container">
+    <div class="section">
+      <h2>Training &amp; Development</h2>
+      <p class="section-desc">Go at your own pace. Core training happens in Phase 1. Everything else is available when you're ready.</p>
+
+      <h3 style="margin-top:0">Core — Everyone Completes</h3>
+      <div class="training-grid">
+        <div class="training-card">
+          <div class="badge core">Core</div>
+          <h4>Small Group Benefits 101</h4>
+          <p>What is group health insurance? How does it work? Who are the players? The foundation for everything else.</p>
+          <div class="timing">Phase 1 &middot; With Brenda &amp; Jason</div>
+        </div>
+        <div class="training-card">
+          <div class="badge core">Core</div>
+          <h4>Amaze Health / Encompassing Health</h4>
+          <p>Our specialty product. How it works, who it's for, how to present it, and why it's the perfect first conversation.</p>
+          <div class="timing">Phase 1 &middot; With Jason &amp; Wendi</div>
+        </div>
+        <div class="training-card">
+          <div class="badge core">Core</div>
+          <h4>Michigan Carrier Landscape</h4>
+          <p>Priority Health, BCBSM/BCN, UHC — who they are, what they offer, how they compete. Your market knowledge foundation.</p>
+          <div class="timing">Phase 1 &middot; With Brenda</div>
+        </div>
+        <div class="training-card">
+          <div class="badge core">Core</div>
+          <h4>CRM &amp; Pipeline Management</h4>
+          <p>Adding contacts, logging activities, creating deals, tracking your pipeline. The system that keeps everything organized.</p>
+          <div class="timing">Phase 1 &middot; With Brenda</div>
+        </div>
+        <div class="training-card">
+          <div class="badge core">Core</div>
+          <h4>Partners Link &amp; Quoting</h4>
+          <p>How to run a quote, read a census, compare carriers, and build a proposal a client can say yes to.</p>
+          <div class="timing">Phase 1 &middot; With Brenda</div>
+        </div>
+        <div class="training-card">
+          <div class="badge core">Core</div>
+          <h4>Compliance Essentials</h4>
+          <p>ERISA, COBRA, ACA employer mandate, HIPAA basics — enough to be dangerous (in a good way).</p>
+          <div class="timing">Phase 1 &middot; With Brenda</div>
+        </div>
+      </div>
+
+      <h3>Intermediate — As You Build Confidence</h3>
+      <div class="training-grid">
+        <div class="training-card">
+          <div class="badge intermediate">Phase 2</div>
+          <h4>Renewal Process</h4>
+          <p>How renewals work, timeline, client communication, re-quoting strategy. The recurring revenue engine.</p>
+          <div class="timing">Shadow a live renewal with Jason or Ken</div>
+        </div>
+        <div class="training-card">
+          <div class="badge intermediate">Phase 2</div>
+          <h4>AI Tools for Sales</h4>
+          <p>Using Claude Team to build presentations, research prospects, draft proposals, and prep for meetings.</p>
+          <div class="timing">With Jason</div>
+        </div>
+        <div class="training-card">
+          <div class="badge intermediate">Phase 2</div>
+          <h4>Voluntary Benefits</h4>
+          <p>Dental, vision, life, disability, FSA, HSA — the add-ons that round out a benefits package and add commission layers.</p>
+          <div class="timing">With Brenda</div>
+        </div>
+      </div>
+
+      <h3>Advanced — When You're Ready to Go Deep</h3>
+      <div class="training-grid">
+        <div class="training-card">
+          <div class="badge advanced">Phase 3+</div>
+          <h4>Large Group Strategy</h4>
+          <p>50-200+ life groups. Different rules, different carriers, different conversations. Partner with Jason or Brenda on these.</p>
+          <div class="timing">Rev-share opportunity</div>
+        </div>
+        <div class="training-card">
+          <div class="badge advanced">Phase 3+</div>
+          <h4>Self-Funded &amp; Level-Funded Plans</h4>
+          <p>Alternative funding strategies for mid-size groups. Growing market segment with higher advisory value.</p>
+          <div class="timing">With Jason</div>
+        </div>
+        <div class="training-card">
+          <div class="badge advanced">Phase 3+</div>
+          <h4>COBRA, FSA, HRA Administration</h4>
+          <p>Implementation and ongoing admin for ancillary programs. Adds value to client relationships and stickiness.</p>
+          <div class="timing">With Brenda</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Advisor Profile Form -->
+  <div class="form-section">
+    <div class="container">
+      <h2>Advisor Profile</h2>
+      <p class="section-desc">Complete your profile so we can get you set up across all our systems, the website, and CRM.</p>
+
+      <form class="form-grid" id="advisor-form" onsubmit="return false;">
+
+        <div class="form-section-label">Personal Information</div>
+
+        <div class="form-group">
+          <label>Full Legal Name <span class="required">*</span></label>
+          <input type="text" name="legal_name" placeholder="Courtney Uhrig">
+        </div>
+        <div class="form-group">
+          <label>Preferred Display Name</label>
+          <input type="text" name="display_name" placeholder="How you'd like to appear on the website">
+        </div>
+        <div class="form-group">
+          <label>Business Phone <span class="required">*</span></label>
+          <input type="tel" name="phone" placeholder="(810) 555-0000">
+        </div>
+        <div class="form-group">
+          <label>Personal Email</label>
+          <input type="email" name="personal_email" placeholder="For backup / non-work communication">
+        </div>
+        <div class="form-group">
+          <label>Mailing Address <span class="required">*</span></label>
+          <input type="text" name="address" placeholder="Street address">
+        </div>
+        <div class="form-group">
+          <label>City, State, ZIP</label>
+          <input type="text" name="city_state_zip" placeholder="Davison, MI 48423">
+        </div>
+        <div class="form-group">
+          <label>Birthday</label>
+          <input type="date" name="birthday">
+        </div>
+        <div class="form-group">
+          <label>Emergency Contact</label>
+          <input type="text" name="emergency_contact" placeholder="Name, phone, relationship">
+        </div>
+
+        <hr class="form-divider">
+        <div class="form-section-label">Family &amp; Personal</div>
+
+        <div class="form-group">
+          <label>Spouse / Partner Name</label>
+          <input type="text" name="spouse_name" placeholder="First and last name">
+        </div>
+        <div class="form-group">
+          <label>Spouse / Partner Birthday</label>
+          <input type="date" name="spouse_birthday">
+        </div>
+        <div class="form-group">
+          <label>Anniversary</label>
+          <input type="date" name="anniversary">
+        </div>
+        <div class="form-group">
+          <label>T-Shirt Size</label>
+          <select name="tshirt_size">
+            <option value="">Select size</option>
+            <option value="XS">XS</option>
+            <option value="S">S</option>
+            <option value="M">M</option>
+            <option value="L">L</option>
+            <option value="XL">XL</option>
+            <option value="2XL">2XL</option>
+            <option value="3XL">3XL</option>
+          </select>
+        </div>
+
+        <div class="form-group full">
+          <label>Children</label>
+          <div class="repeater" id="kids-repeater">
+            <div class="repeater-row">
+              <input type="text" name="kid_1_name" placeholder="Child's name">
+              <input type="date" name="kid_1_bday" placeholder="Birthday">
+            </div>
+          </div>
+          <button type="button" class="btn-add" onclick="addKid()">+ Add another child</button>
+        </div>
+
+        <div class="form-group">
+          <label>Pets</label>
+          <input type="text" name="pets" placeholder="e.g. Cooper (golden retriever), Luna (cat)">
+        </div>
+        <div class="form-group">
+          <label>Favorite Coffee / Drink Order</label>
+          <input type="text" name="coffee_order" placeholder="Your go-to order">
+        </div>
+        <div class="form-group">
+          <label>Hobbies / Interests</label>
+          <input type="text" name="hobbies" placeholder="Outside of work — what do you enjoy?">
+        </div>
+        <div class="form-group">
+          <label>Preferred Communication</label>
+          <select name="preferred_comms">
+            <option value="">How do you like to be reached?</option>
+            <option value="text">Text message</option>
+            <option value="call">Phone call</option>
+            <option value="teams">Teams chat</option>
+            <option value="email">Email</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Best Time to Reach You</label>
+          <input type="text" name="best_time" placeholder="e.g. Mornings before 10, afternoons after 2">
+        </div>
+
+        <hr class="form-divider">
+        <div class="form-section-label">Professional Details</div>
+
+        <div class="form-group">
+          <label>Insurance License Number <span class="required">*</span></label>
+          <input type="text" name="license_number" placeholder="MI license number">
+        </div>
+        <div class="form-group">
+          <label>License State(s)</label>
+          <input type="text" name="license_states" placeholder="e.g. Michigan">
+        </div>
+        <div class="form-group">
+          <label>License Expiration Date</label>
+          <input type="date" name="license_expiration">
+        </div>
+        <div class="form-group">
+          <label>Current Carrier Appointments</label>
+          <input type="text" name="carrier_appointments" placeholder="List any current appointments">
+        </div>
+        <div class="form-group">
+          <label>LinkedIn Profile URL</label>
+          <input type="url" name="linkedin" placeholder="https://linkedin.com/in/...">
+        </div>
+        <div class="form-group">
+          <label>Enneagram Type</label>
+          <select name="enneagram">
+            <option value="">Select after taking the test</option>
+            <option value="1">Type 1 — The Reformer</option>
+            <option value="2">Type 2 — The Helper</option>
+            <option value="3">Type 3 — The Achiever</option>
+            <option value="4">Type 4 — The Individualist</option>
+            <option value="5">Type 5 — The Investigator</option>
+            <option value="6">Type 6 — The Loyalist</option>
+            <option value="7">Type 7 — The Enthusiast</option>
+            <option value="8">Type 8 — The Challenger</option>
+            <option value="9">Type 9 — The Peacemaker</option>
+          </select>
+        </div>
+
+        <hr class="form-divider">
+        <div class="form-section-label">Website &amp; Marketing</div>
+
+        <div class="form-group full">
+          <label>Short Bio <span class="required">*</span></label>
+          <textarea name="bio" placeholder="2–3 sentences — who you are, what you do, why you care about helping people with their benefits. This goes on the Nexus website team page."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label>Professional Headshot</label>
+          <div class="upload-area">
+            Drag &amp; drop or <span>browse</span><br>
+            <small>High-resolution photo for website and marketing</small>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Family Photo</label>
+          <div class="upload-area">
+            Drag &amp; drop or <span>browse</span><br>
+            <small>For your advisor profile page</small>
+          </div>
+        </div>
+
+        <hr class="form-divider">
+        <div class="form-section-label">Your Goals</div>
+
+        <div class="form-group full">
+          <label>What does success look like for you in 6 months?</label>
+          <textarea name="goals_6mo" placeholder="Income goals, lifestyle goals, what you want to have accomplished..."></textarea>
+        </div>
+        <div class="form-group full">
+          <label>What are you most excited about? Most nervous about?</label>
+          <textarea name="excited_nervous" placeholder="Be honest — this helps us support you better."></textarea>
+        </div>
+        <div class="form-group">
+          <label>Preferred Pace</label>
+          <select name="pace">
+            <option value="">How fast do you want to move?</option>
+            <option value="fast">Fast — I need income quickly, let's go</option>
+            <option value="steady">Steady — balanced learning and earning</option>
+            <option value="deep">Deep — I want to really learn before going full speed</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Hours Per Week (Estimate)</label>
+          <input type="text" name="hours_per_week" placeholder="How much time can you commit?">
+        </div>
+
+        <div class="submit-row">
+          <button class="btn-save" type="button" onclick="saveForm()">Save Draft</button>
+          <button class="btn-submit" type="submit" onclick="submitForm()">Submit Profile</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <div class="footer-brand">Nexus Benefit Solutions</div>
+    <div>Advisory Without Compromise</div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast"></div>
+
+  <script>
+    // ── State Management ──
+    const STORAGE_KEY = 'nexus-onboarding-courtney';
+
+    function loadState() {
+      try {
+        return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {};
+      } catch { return {}; }
+    }
+
+    function saveState(state) {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+    }
+
+    // ── Toast ──
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      toast.textContent = msg;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 2500);
+    }
+
+    // ── Checkbox Toggling ──
+    function initCheckboxes() {
+      const state = loadState();
+      const tasks = state.tasks || {};
+
+      // Restore saved state
+      document.querySelectorAll('.phase li[data-task]').forEach(li => {
+        const key = li.dataset.task;
+        if (tasks[key]) {
+          li.classList.add('done');
+        }
+      });
+
+      // Click handler
+      document.querySelectorAll('.phase li[data-task]').forEach(li => {
+        li.addEventListener('click', () => {
+          li.classList.toggle('done');
+          const state = loadState();
+          if (!state.tasks) state.tasks = {};
+          state.tasks[li.dataset.task] = li.classList.contains('done');
+          saveState(state);
+          updateProgress();
+          showToast(li.classList.contains('done') ? '✓ Task complete' : 'Task unmarked');
+        });
+      });
+    }
+
+    // ── Progress Tracking ──
+    function updateProgress() {
+      const allTasks = document.querySelectorAll('.phase li[data-task]');
+      const doneTasks = document.querySelectorAll('.phase li.done[data-task]');
+      const total = allTasks.length;
+      const done = doneTasks.length;
+      const pct = total > 0 ? Math.round((done / total) * 100) : 0;
+
+      document.getElementById('progress-pct').textContent = pct + '%';
+      document.getElementById('progress-bar').style.width = pct + '%';
+      document.getElementById('progress-count').textContent = done + ' of ' + total + ' tasks complete';
+
+      // Per-phase progress
+      document.querySelectorAll('.phase').forEach(phase => {
+        const phaseAll = phase.querySelectorAll('li[data-task]');
+        const phaseDone = phase.querySelectorAll('li.done[data-task]');
+        const phasePct = phaseAll.length > 0 ? Math.round((phaseDone.length / phaseAll.length) * 100) : 0;
+        phase.querySelector('.phase-pct').textContent = phasePct + '%';
+      });
+
+      // Day count
+      const start = new Date('2026-03-03');
+      const now = new Date();
+      const dayCount = Math.max(1, Math.min(90, Math.ceil((now - start) / (1000 * 60 * 60 * 24))));
+      document.getElementById('day-count').textContent = dayCount;
+    }
+
+    // ── Form Save/Load ──
+    function saveForm() {
+      const form = document.getElementById('advisor-form');
+      const state = loadState();
+      state.form = {};
+      const formData = new FormData(form);
+      for (const [key, value] of formData.entries()) {
+        state.form[key] = value;
+      }
+      saveState(state);
+      showToast('Draft saved');
+    }
+
+    function loadForm() {
+      const state = loadState();
+      if (!state.form) return;
+      const form = document.getElementById('advisor-form');
+      for (const [key, value] of Object.entries(state.form)) {
+        const el = form.elements[key];
+        if (el) el.value = value;
+      }
+    }
+
+    function submitForm() {
+      saveForm();
+      showToast('Profile submitted — Jason will be notified');
+    }
+
+    // ── Repeater (Kids) ──
+    let kidCount = 1;
+    function addKid() {
+      kidCount++;
+      const repeater = document.getElementById('kids-repeater');
+      const row = document.createElement('div');
+      row.className = 'repeater-row';
+      row.innerHTML = `
+        <input type="text" name="kid_${kidCount}_name" placeholder="Child's name">
+        <input type="date" name="kid_${kidCount}_bday" placeholder="Birthday">
+      `;
+      repeater.appendChild(row);
+    }
+
+    // ── Init ──
+    document.addEventListener('DOMContentLoaded', () => {
+      initCheckboxes();
+      loadForm();
+      updateProgress();
+    });
+  </script>
+
+</body>
+</html>
